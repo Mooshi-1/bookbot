@@ -3,11 +3,12 @@ def main():
     text = get_book_text(book_path)
     num_words = count_words(text)
     num_letters = count_characters(text)
-    report = compile_report(num_letters)
-
+    
+    #begin report
     print(f"--- Begin report of {book_path} ---")
-    print(f"{num_words} words founr in the document.")
-    print(report)
+    print(f"{num_words} words found in the document.")
+    for letter, count in num_letters.items():
+        print(f"The '{letter}' character was found {count} times.")
 
 
 #pull book
@@ -33,10 +34,5 @@ def count_characters(string):
     #print(alphabet)
     return(alphabet)
 
-def compile_report(num_letters):
-    return num_letters
-
-
-        
 
 main()
